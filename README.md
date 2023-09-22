@@ -3,6 +3,10 @@
 This OpenMapTiles profile for [Planetiler](https://github.com/onthegomap/planetiler) is based
 on [OpenMapTiles](https://github.com/openmaptiles/openmaptiles).
 
+## TrailStash fork changes to the `path` class
+* `footway` field added when `footway=sidewalk|crossing`
+* `informal` field added when `informal=yes`
+
 ## How to run
 
 Using pre-built docker image:
