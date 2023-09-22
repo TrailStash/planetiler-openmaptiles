@@ -384,6 +384,12 @@ public class Transportation implements
         .setSortKey(element.zOrder())
         .setMinZoom(minzoom);
 
+      if ("footway".equals(highway) && element.source().hasTag("footway", "sidewalk", "crossing")) {
+        feature.setAttr("footway", element.source().getString("footway"));
+      }
+      if (FieldValues.CLASS_PATH.equals(highwayClass) && element.source().hasTag("informal", "yes")) {
+        feature.setAttr("informal", "yes");
+      }
       if (isFootwayOrSteps(highway)) {
         feature
           .setAttr(Fields.LEVEL, Parse.parseLongOrNull(element.source().getTag("level")))
